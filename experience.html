@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expérience - Portfolio Étudiant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8000ff;
+      --secondary: #f1f5f9;
+      --accent: #8000ff;
+      --bg: #1e293b;
+      --text: #f8fafc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary);
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: white;
+    }
+
+    nav {
+      background-color: #0f172a;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    h2 {
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .experience-item {
+      background-color: #334155;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .experience-item h3 {
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    .experience-item p {
+      color: var(--text);
+    }
+
+    footer {
+      background-color: #0f172a;
+      color: var(--secondary);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Expérience</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="parcours.html">Parcours</a>
+    <a href="experience.html">Expérience</a>
+    <a href="projets.html">Projets</a>
+    <a href="universitaire.html">SAE</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <h2>Expériences Bénévoles</h2>
+
+    <div class="experience-item">
+      <h3>💻 Aide informatique - Les Astroliens (2023)</h3>
+      <p>Accompagnement individualisé auprès de personnes âgées dans l’utilisation de leur matériel informatique (smartphones, tablettes, ordinateurs). Patience, pédagogie et sens de l'écoute étaient essentiels pour répondre à leurs besoins numériques quotidiens.</p>
+    </div>
+
+    <div class="experience-item">
+      <h3>🥫 Collecte alimentaire - Resto du Cœur (2021, 1 mois)</h3>
+      <p>Organisation et coordination d’une campagne de collecte de denrées alimentaires. Mise en place logistique sur site, promotion active auprès du public et gestion de l’affluence afin d’optimiser la participation et la collecte.</p>
+    </div>
+
+    <h2>Expérience Professionnelle</h2>
+
+    <div class="experience-item">
+      <h3>🏬 Stage découverte - Franprix (01/2021, 1 semaine)</h3>
+      <p>Organisation des rayons, mise en place des produits et maintien de la propreté de l’espace de vente. Apprentissage du fonctionnement d’un commerce de proximité et du contact client.</p>
+    </div>
+
+    <div class="experience-item">
+      <h3>🎉 Participation événementielle (02/2022, 1 semaine)- Forum Étudiants & Numérique</h3>
+      <p>Accueil des visiteurs, gestion du planning des stands et participation à l’animation d’ateliers autour du numérique pour les jeunes. Première prise de contact avec la gestion d’un événement public.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> BOUSARGHINI Mohamed</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const items = document.querySelectorAll('.experience-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    items.forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>

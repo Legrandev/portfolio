@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Portfolio</title>
+  
+  <style>
+    :root {
+      --primary: #4000ae;
+      --accent: #8000ff;
+      --bg: #0f172a;
+      --text: #f8fafc;
+      --box: #1e293b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero .content {
+      position: relative;
+      z-index: 2;
+      animation: fadeInDown 2s ease forwards;
+    }
+
+    h1.title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: var(--accent);
+    }
+
+    p.subtitle, p.location {
+      font-size: 1.5rem;
+    }
+
+    .top-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 3;
+      display: flex;
+      gap: 0.7rem;
+    }
+
+    .top-buttons button,
+    .top-buttons a {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: white;
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .top-buttons button:hover,
+    .top-buttons a:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    nav.navbar {
+      background: var(--primary);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: slideDown 1.2s ease-out forwards;
+    }
+
+    nav.navbar ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav.navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav.navbar a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s ease;
+    }
+
+    nav.navbar a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    section {
+      background: var(--box);
+      padding: 2rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background: var(--box);
+      color: #cbd5e1;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    .skill {
+      margin-bottom: 1.2rem;
+    }
+
+    .skill span {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+    }
+
+    .bar {
+      background: #475569;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+      position: relative;
+    }
+
+    .fill {
+      background: var(--accent);
+      height: 100%;
+      width: 0;
+      border-radius: 20px;
+      color: #fff;
+      font-size: 0.85rem;
+      text-align: right;
+      padding-right: 0.5rem;
+      line-height: 20px;
+      transition: width 2s ease-in-out;
+    }
+    .langue-links {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 50;
+}
+
+.langue-links a {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  color: white;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+}
+
+.langue-links a:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px var(--accent);
+  background: rgba(0, 0, 0, 0.6);
+}
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+  </style>
+  <script src="https://kit.fontawesome.com/8e11815fa5.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div class="transition transition-slide-in"></div>
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="top-buttons">
+      <button onclick="toggleLanguage()">EN</button>
+      <a href="https://www.linkedin.com/in/tonprofil" target="_blank">LinkedIn</a>
+      <a href="https://www.github.com" target="_blank">Github</a>
+      <a href="mailto:tonadresse@mail.com">Mail</a>
+    </div>
+    <div class="content">
+      <img src="https://www.creativefabrica.com/wp-content/uploads/2019/03/Monogram-MB-Logo-Design-by-Greenlines-Studios.jpg" alt="Photo de Mohamed Bousarghini" class="profile-pic">
+
+      <h1 class="title">BOUSARGHINI Mohamed</h1>
+      <p class="subtitle">Étudiant en BUT Informatique 1re année</p>
+      <p class="location">Université Sorbonne Paris Nord</p>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="parcours.html">Parcours</a></li>
+      <li><a href="experience.html">Expérience</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="universitaire.html">SAE</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>À propos</h2>
+      <p id="intro-text">Actuellement étudiant en première année de BUT Informatique, je me dirige vers la spécialité Développement d'applications, qui correspond pleinement à mes centres d’intérêt et à mes objectifs professionnels. Curieux, motivé et passionné par le monde du développement, j’apprends chaque jour à concevoir des solutions logicielles utiles, efficaces et adaptées aux besoins des utilisateurs.
+        <br> <br>
+        Ce qui me plaît dans l’informatique, c’est la possibilité de transformer une idée en un projet concret, qu’il s’agisse d’un site web, d’une application mobile ou d’un outil métier. Le développement d’applications représente pour moi un domaine stimulant, à la fois technique et créatif, dans lequel j’ai envie de progresser.
+        <br> <br>
+        En dehors de mes études, je prends plaisir à travailler sur des projets personnels qui me permettent de tester de nouvelles technologies, de renforcer mes compétences et d’exprimer ma créativité. J’aime également collaborer sur des projets collectifs, car apprendre des autres est pour moi une source précieuse d’enrichissement.
+        <br> <br>
+        Si vous souhaitez en savoir plus sur mon parcours ou simplement échanger, n’hésitez pas à parcourir mon portfolio ou à me contacter. Mon CV est également disponible en téléchargement !</p>
+    </section>
+
+    <section>
+      <h2>Compétences</h2><br><br>
+      <h3>Langages & Développement</h3><br>
+      <div class="skill"><span>Python</span><div class="bar"><div class="fill" data-pourcentage="90">90%</div></div></div>
+      <div class="skill"><span>Java</span><div class="bar"><div class="fill" data-pourcentage="85">85%</div></div></div>
+      <div class="skill"><span>SQL</span><div class="bar"><div class="fill" data-pourcentage="80">80%</div></div></div>
+      <div class="skill"><span>JavaScript</span><div class="bar"><div class="fill" data-pourcentage="80">80%</div></div></div>
+      <div class="skill"><span>HTML</span><div class="bar"><div class="fill" data-pourcentage="70">70%</div></div></div>
+      <div class="skill"><span>CSS</span><div class="bar"><div class="fill" data-pourcentage="95">95%</div></div></div>
+      <div class="skill"><span>C</span><div class="bar"><div class="fill" data-pourcentage="60">60%</div></div></div>
+      <div class="skill"><span>RISC</span><div class="bar"><div class="fill" data-pourcentage="60">60%</div></div></div>
+      <div class="skill"><span>Bash</span><div class="bar"><div class="fill" data-pourcentage="75">75%</div></div></div>
+      <br>
+      <h3>Réseaux & Systèmes</h3><br>
+      <div class="skill"><span>Compétences réseaux</span><div class="bar"><div class="fill" data-pourcentage="70">70%</div></div></div>
+      <div class="skill"><span>Installation de poste</span><div class="bar"><div class="fill" data-pourcentage="95">95%</div></div></div>
+    </section>
+
+    <section>
+      <h2>Langues</h2><br>
+      <div class="skill"><span>🇫🇷 Français</span><div class="bar"><div class="fill" data-pourcentage="100">100%</div></div></div>
+      <div class="skill"><span>🇲🇦 Arabe - Dialècte marocain</span><div class="bar"><div class="fill" data-pourcentage="100">100%</div></div></div>
+      <div class="skill"><span>🇬🇧 Anglais (B2)</span><div class="bar"><div class="fill" data-pourcentage="80">80%</div></div></div>
+      <div class="skill"><span>🇪🇸 Espagnol (B1)</span><div class="bar"><div class="fill" data-pourcentage="60">60%</div></div></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> BOUSARGHINI Mohamed</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.fill').forEach(bar => {
+        const pourcentage = bar.getAttribute('data-pourcentage');
+        setTimeout(() => {
+          bar.style.width = pourcentage + '%';
+        }, 100);
+      });
+    });
+
+    function toggleLanguage() {
+      const button = document.querySelector('.top-buttons button');
+      const isFrench = button.textContent === 'EN';
+      document.querySelector('.subtitle').textContent = isFrench ? 'First year Computer Science student' : 'Étudiant en BUT Informatique 1re année';
+      document.querySelector('.location').textContent = isFrench ? 'University Sorbonne Paris Nord' : 'Université Sorbonne Paris Nord';
+      document.getElementById('intro-text').textContent = isFrench ?
+        "Currently a first-year student in Computer Science, I am specializing in Application Development..." :
+        "Actuellement étudiant en première année de BUT Informatique, je me dirige vers la spécialité Développement d'applications, qui correspond pleinement à mes centres d’intérêt et à mes objectifs professionnels. Curieux, motivé et passionné par le monde du développement, j’apprends chaque jour à concevoir des solutions logicielles utiles, efficaces et adaptées aux besoins des utilisateurs. Ce qui me plaît dans l’informatique, c’est la possibilité de transformer une idée en un projet concret, qu’il s’agisse d’un site web, d’une application mobile ou d’un outil métier. Le développement d’applications représente pour moi un domaine stimulant, à la fois technique et créatif, dans lequel j’ai envie de progresser. En dehors de mes études, je prends plaisir à travailler sur des projets personnels qui me permettent de tester de nouvelles technologies, de renforcer mes compétences et d’exprimer ma créativité. J’aime également collaborer sur des projets collectifs, car apprendre des autres est pour moi une source précieuse d’enrichissement. Si vous souhaitez en savoir plus sur mon parcours ou simplement échanger, n’hésitez pas à parcourir mon portfolio ou à me contacter. Mon CV est également disponible en téléchargement !";
+      button.textContent = isFrench ? 'FR' : 'EN';
+    }
+  </script>
+</body>
+</html>

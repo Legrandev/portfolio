@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+    :root {
+      --bg: #1e293b;
+      --card: #334155;
+      --accent: #8000ff;
+      --text: #f8fafc;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background-color: var(--accent);
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: var(--card);
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    h2 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+    label, input, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4338ca;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfolio - Contact</h1>
+  </header>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="parcours.html">Parcours</a>
+    <a href="experience.html">Expérience</a>
+    <a href="projets.html">Projets</a>
+    <a href="universitaire.html">SAE</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <h2>Contact & CV</h2>
+    <section class="card">
+      <h3>Téléchargement CV</h3>
+      <p><a href="cv.pdf" download style="color: var(--accent);">Télécharger mon CV (PDF)</a></p>
+    </section>
+    <section class="card">
+      <h3>Formulaire de Contact</h3>
+      <form>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Votre email">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Votre message"></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parcours Scolaire</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+    :root {
+      --bg: #1e293b;
+      --card: #334155;
+      --accent: #8000ff;
+      --text: #f8fafc;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background-color: var(--accent);
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: var(--card);
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .card:nth-child(2) {animation-delay: 0.2s;}
+    .card:nth-child(3) {animation-delay: 0.4s;}
+    .card:nth-child(4) {animation-delay: 0.6s;}
+    h2 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfolio - Parcours Scolaire</h1>
+  </header>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="parcours.html">Parcours</a>
+    <a href="experience.html">Expérience</a>
+    <a href="projets.html">Projets</a>
+    <a href="universitaire.html">SAE</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <h2>Parcours Scolaire</h2>
+    <section class="card">
+        <h3>👨‍🎓 BUT Informatique</h3>
+        <br>
+        <p>Université Sorbonne Paris Nord</p>
+        <p>93430 Villetaneuse </p>
+        <p>2024-Actuel</p>
+      </section>
+    <section class="card">
+        <h3>👨‍🎓 Baccalauréat Mention XX</h3>
+        <br>
+        <p>Lycée Paul Eluard</p>
+        <p>93200 Saint-Denis</p>
+        <p>2021-2024</p>
+      </section>
+      <section class="card">
+        <h3>👨‍🎓 Brevet Mention XX</h3>
+        <br>
+        <p>Collège Jean Lurçat
+        <br>93200 Saint-Denis
+        <br> 2017-2021</p>
+      </section>
+      
+  </main>
+</body>
+</html>

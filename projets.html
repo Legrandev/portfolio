@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets Personnels</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+    :root {
+      --bg: #1e293b;
+      --card: #334155;
+      --accent: #8000ff;
+      --text: #f8fafc;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background-color: var(--accent);
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: var(--card);
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    h2 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfolio - Projets</h1>
+  </header>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="parcours.html">Parcours</a>
+    <a href="experience.html">Expérience</a>
+    <a href="projets.html">Projets</a>
+    <a href="universitaire.html">SAE</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <section class="card" style="animation-delay: 0.1s;">
+        <h3 style="color: #c084fc;">TodoList CLI & Web</h3>
+        <p><strong>Temps estimé :</strong> 1 mois</p>
+        <p><strong>Langages :</strong> Python, HTML, CSS, JavaScript, SQL, Bash</p>
+        <br>
+        <img src="https://tool-advisor.fr/wp-content/uploads/2021/02/Monday-800x484.png.webp"
+        alt="Projet TodoList CLI & Web"
+             style="width: 100%; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <p>
+          <strong>Description :</strong><br>
+          Ce projet est une application de gestion de tâches, développée en deux versions complémentaires :
+          <br><br>
+          🔹 <strong>Version ligne de commande (CLI)</strong> : développée en <strong>Python</strong>, elle permet d’ajouter, supprimer, modifier et afficher des tâches depuis le terminal. Chaque tâche possède un titre, une description et un statut (à faire / terminé). Les données sont stockées dans un fichier <strong>JSON</strong> pour garder les tâches entre deux sessions.
+          <br><br>
+          🔹 <strong>Version Web</strong> : une interface simple en <strong>HTML / CSS / JavaScript</strong> qui lit les tâches depuis un fichier ou une base de données locale. Elle affiche dynamiquement les tâches avec des animations CSS, des couleurs différentes selon leur statut, et permet une lecture agréable sur ordinateur ou mobile.
+          <br><br>
+          🔸 Un petit script <strong>Bash</strong> permet de lancer automatiquement la version CLI ou d’ouvrir la version web dans le navigateur.
+          <br><br>
+          Ce projet m’a permis de mettre en pratique plusieurs notions étudiées en cours : la manipulation de fichiers avec Python, la gestion des données, le DOM en JavaScript, ainsi que le design responsive en CSS. Il m’a aussi aidé à mieux structurer un projet en plusieurs fichiers et à utiliser Git pour le versionner.
+        </p>
+        <br>
+        <a href="https://github.com/tonpseudo/todolist-cli-web" target="_blank"
+           style="display: inline-block; padding: 0.6rem 1.2rem; background: var(--accent); color: white; border-radius: 8px; text-decoration: none; transition: background 0.3s ease;">
+           🔗 Voir sur GitHub
+        </a>
+      </section>
+      
+    
+    
+    <section class="card">
+      <h3><!-- Nom du projet --></h3>
+      <p><!-- Description du projet personnel ici --></p>
+    </section>
+  </main>
+</body>
+</html>

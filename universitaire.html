@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SAE Universitaires</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    :root {
+      --bg: #1e293b;
+      --card: #334155;
+      --accent: #8000ff;
+      --text: #f8fafc;
+      --highlight: #22c55e;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background-color: var(--accent);
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: var(--card);
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    .card h3 {
+      color: var(--accent);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .card p {
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
+    }
+    .note {
+      font-size: 1.2rem;
+      background: var(--highlight);
+      color: black;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+    }
+    .proof-image {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .proof-image img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfolio - SAE</h1>
+  </header>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="parcours.html">Parcours</a>
+    <a href="experience.html">Expérience</a>
+    <a href="projets.html">Projets</a>
+    <a href="universitaire.html">SAE</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <h2 style="text-align: center; color: var(--accent); margin-bottom: 2rem;">SAE Universitaires</h2>
+
+    <section class="card">
+      <h3>🧩 SAE : Jeu d’échecs en Java</h3>
+
+      <p><strong>🎯 Description :</strong><br>
+        Création d’un jeu d’échecs en Java, basé sur la programmation orientée objet. Le programme permet à deux joueurs humains de jouer une partie d’échecs en console, avec un système de tours, une horloge, des vérifications de déplacements, et une architecture modulaire respectant les principes de conception orientée objet.
+      </p>
+
+      <p><strong>📅 Récit chronologique :</strong><br>
+        <ul style="margin-left: 1.2rem; list-style-type: square;">
+          <li><strong>Début :</strong> Analyse du cahier des charges, création du diagramme de classes UML.</li>
+          <li><strong>Étape 1 :</strong> Conception des classes de base (Case, Horloge, Joueur).</li>
+          <li><strong>Étape 2 :</strong> Création de la superclasse <em>Piece</em> et des sous-classes (Pion, Roi, Reine, Tour, Fou, Cavalier).</li>
+          <li><strong>Étape 3 :</strong> Implémentation de la classe <em>Echiquier</em> pour la gestion du plateau et de l’affichage.</li>
+          <li><strong>Étape 4 :</strong> Développement de la classe <em>Partie</em>, orchestrant toute la logique du jeu.</li>
+          <li><strong>Étape 5 :</strong> Finalisation avec tests, alternance de joueurs, intégration de l’horloge.</li>
+          <li><strong>Étape 6 :</strong> Nettoyage, commentaires, préparation à l’évaluation.</li>
+        </ul>
+      </p>
+
+      <p><strong>🧠 Compétences acquises :</strong><br>
+        - Maîtrise de la programmation orientée objet en Java<br>
+        - Utilisation de l’héritage, polymorphisme, encapsulation, abstraction<br>
+        - Conception UML avant développement<br>
+        - Organisation modulaire et lisible du code<br>
+        - Travail d’équipe sur un projet structuré<br>
+        - Mise en œuvre de tests manuels fonctionnels
+      </p>
+
+      <p><strong>🛠️ Langages et techniques utilisés :</strong><br>
+        - Java (POO, classes, interfaces)<br>
+        - Diagramme de classes UML<br>
+        - ASCII art pour l’affichage de l’échiquier<br>
+      </p>
+
+      <p><strong>📸 Preuves :</strong></p>
+      <div class="proof-image">
+        <img src="https://cdn.discordapp.com/attachments/1380506838935801866/1384224565504376843/image.png?ex=6851a716&is=68505596&hm=d65719646b660db6d857562a2c439b316e16cc9f344407d37dec2828832ac79c&" alt="Capture du jeu d’échecs">
+      </div>
+
+      <p><strong>📊 Note :</strong><br>
+        <span class="note">XX / 20</span>
+      </p>
+
+      <p><strong>💻 Code source sur GitHub :</strong></p>
+<div style="margin-top: 1rem; text-align: center;">
+  <a href="https://github.com/ton-utilisateur/mon-projet-echec" target="_blank" style="display: inline-flex; align-items: center; background-color: #0d1117; color: white; padding: 0.6rem 1rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease;">
+    <svg style="margin-right: 0.5rem;" height="20" width="20" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38 
+      0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+      -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78
+      -.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.62
+      7.62 0 012-.27c.68 0 1.36.09 2 .27 1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08
+      2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 
+      3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 
+      8.01 0 0016 8c0-4.42-3.58-8-8-8z"/>
+    </svg>
+    Voir sur GitHub
+  </a>
+</div>
+
+    </section>
+  </main>
+</body>
+</html>
